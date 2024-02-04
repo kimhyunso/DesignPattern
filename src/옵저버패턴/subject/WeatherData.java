@@ -1,9 +1,11 @@
-package 옵저버패턴;
+package 옵저버패턴.subject;
+
+import 옵저버패턴.observer.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherData implements Subject{
+public class WeatherData implements Subject {
 
     private List<Observer> observers;
     private float temperature;
@@ -28,7 +30,7 @@ public class WeatherData implements Subject{
     @Override
     public void notifyObserver() {
         for (Observer observer : observers){
-            observer.update(temperature, humidity, pressure);
+            observer.update();
         }
     }
 
@@ -41,5 +43,17 @@ public class WeatherData implements Subject{
         this.humidity = humidity;
         this.pressure = pressure;
         measurementsChanged();
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getTemperature() {
+        return temperature;
     }
 }
