@@ -17,7 +17,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-
     abstract Pizza createPizza(String type);
-
 }

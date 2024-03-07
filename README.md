@@ -10,3 +10,6 @@
 - OCP (Open-Close Principle) : 확장에는 open 변경에는 close
 
 # 4. 팩토리패턴 (FactoryPattern)
+- 심플팩토리 패턴은 OCP 원칙에 위배됨 이유 : 만약 더 추가사항이 발생하면 변경해야하는 곳이 생김
+- 
+
