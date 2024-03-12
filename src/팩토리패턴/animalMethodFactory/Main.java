@@ -2,6 +2,7 @@ package 팩토리패턴.animalMethodFactory;
 
 import 팩토리패턴.animalMethodFactory.domain.Animal;
 import 팩토리패턴.animalMethodFactory.domain.Cat;
+import 팩토리패턴.animalMethodFactory.domain.Dog;
 
 public class Main{
 
