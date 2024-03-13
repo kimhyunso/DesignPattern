@@ -1,11 +1,12 @@
 public class AnimalFactory{
-    public Animal getAnimal(String type){
+    public Animal getAnimal(AnimalType type){
         if (type == null){
             return null;
         }
-        if (type.equalsIgnoreCase("CAT")){
+
+        if (type.equals(AnimalType.CAT)){
             return new Cat();
-        }else if (type.equalsIgnoreCase("DOG")){
+        }else if (type.equals(AnimalType.DOG)){
             return new Dog();
         }
         return null;

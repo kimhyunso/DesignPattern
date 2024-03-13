@@ -17,7 +17,7 @@ public class Main{
 
         DogFactory dogFactory = new DogFactory();
         animal = dogFactory.createAnimal();
-        dogFactory.makeWings();
+        animal = dogFactory.makeWings(animal);
         animal.speak();
     }
 

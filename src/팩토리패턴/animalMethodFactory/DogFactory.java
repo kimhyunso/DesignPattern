@@ -10,8 +10,9 @@ public class DogFactory implements AnimalFactory{
         return new Dog();
     }
 
-    public void makeWings(){
+    public Dog makeWings(Animal animal){
         System.out.println("add Wings");
+        return (Dog)animal;
     }
 
 }
