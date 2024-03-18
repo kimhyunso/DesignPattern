@@ -1,3 +1,4 @@
+
 public enum EnumSingleton {
     UNIQUE_INSTANCE;
     private boolean empty;
