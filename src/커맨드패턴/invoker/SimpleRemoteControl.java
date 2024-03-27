@@ -10,6 +10,8 @@ public class SimpleRemoteControl{
 
     public void setCommand(Command command){
         slot = command;
+
+        
     }
 
     public void buttonWasPressed(){
