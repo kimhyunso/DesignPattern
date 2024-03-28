@@ -2,6 +2,14 @@ package 커맨드패턴.receiver;
 
 public class GarageDoor {
 
+    private String location;
+
+    public GarageDoor(String location){
+        this.location = location;
+    }
+
+
+
     public void up(){
         System.out.println("차고 문열기");
     }

@@ -12,10 +12,10 @@ public class RemoteControlTest {
         // 인보커
         SimpleRemoteControl remote = new SimpleRemoteControl();
         // 리시버
-        Light light = new Light();
+        Light light = new Light("Living Room");
         LightOnCommand lightOn = new LightOnCommand(light);
 
-        GarageDoor garageDoor = new GarageDoor();
+        GarageDoor garageDoor = new GarageDoor("Garage");
         GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
 
         remote.setCommand(lightOn);
