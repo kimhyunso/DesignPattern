@@ -2,19 +2,19 @@ package 커맨드패턴.command;
 
 import 커맨드패턴.receiver.CeilingFan;
 
-public class CeilingFanOffCommand implements Command{
+public class CeilingFanMediumCommand implements Command{
 
     private CeilingFan ceilingFan;
     private int prevSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan){
+    public CeilingFanMediumCommand(CeilingFan ceilingFan){        
         this.ceilingFan = ceilingFan;
     }
-
+    
     @Override
     public void execute(){
         prevSpeed = ceilingFan.getSpeed();
-        ceilingFan.off();
+        ceilingFan.medium();
     }
 
     @Override
@@ -28,7 +28,6 @@ public class CeilingFanOffCommand implements Command{
         }else if (prevSpeed == CeilingFan.OFF){
             ceilingFan.off();
         }
-        ceilingFan.on();
     }
 
 }
