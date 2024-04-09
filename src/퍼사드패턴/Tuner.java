@@ -4,11 +4,11 @@ public class Tuner{
     private Amplifier amplifier;
 
     public void on(){
-
+        System.out.println("튜너 켜기");
     }
 
     public void off(){
-
+        System.out.println("튜너 끄기");
     }
 
     public void setAm(Amplifier amplifier){
@@ -19,8 +19,8 @@ public class Tuner{
         
     }
 
-    public void setFrequency(){
-        System.out.println("주파수 조절");
+    public void setFrequency(int frequency){
+        System.out.println("주파수 조절 : " + frequency + "Hz");
     }
 
     @Override

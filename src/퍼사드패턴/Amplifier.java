@@ -5,27 +5,33 @@ public class Amplifier{
     private StreamingPlayer player;
 
     public void on(){
-
+        System.out.println("앰프 켜기");
     }
 
     public void off(){
-
+        System.out.println("앰프 끄기");
     }
 
     public void setStreamPlayera(StreamingPlayer player){
         this.player = player;
+        System.out.println("앰프를 스트리밍 플레이어와 연결");
     }
 
     public void setStereoSound(){
-
+        System.out.println("앰프를 스테리오 모드로 설정");
     }
 
-    public void setTuner(){
+    public void setSurroundSound(){
+        System.out.println("앰프를 서라운드 모드로 설정 (5.1채널)");
+    }
 
+    public void setTuner(Tuner tuner){
+        this.tuner = tuner;
+        System.out.println("앰프와 튜너를 연결");
     }
 
     public void setVolumn(int volumn){
-
+        System.out.println("앰플 볼륨 : " + volumn);
     }
 
     @Override
