@@ -38,7 +38,7 @@ public class HomeTheaterFacade{
         projector.on();
         projector.wideScreenMode();
         amplifier.on();
-        amplifier.setStreamPlayera(player);
+        amplifier.setStreamPlayer(player);
         amplifier.setSurroundSound();
         amplifier.setVolumn(5);
         player.on();
