@@ -25,6 +25,8 @@ public class Waitress{
     }
 
     private void printMenu(Iterator<MenuItem> iterator){
+        // 향상된 for문
+        
         while (iterator.hasNext()){
             MenuItem menuItem = (MenuItem) iterator.next();
             System.out.println(menuItem.getName() + ", ");
