@@ -1,7 +1,8 @@
 package 반복자패턴;
 
 import 반복자패턴.domain.MenuItem;
-import 반복자패턴.iterator.Iterator;
+// import 반복자패턴.iterator.Iterator;
+import java.util.Iterator;
 
 public class Waitress{
     private PancakeHouseMenu pancakeHouseMenu;
@@ -13,8 +14,8 @@ public class Waitress{
     }
 
     public void printMenu(){
-        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator dinerIterator = dinerMenu.createIterator();
+        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
 
         System.out.println("메뉴\n-------\n아침 메뉴");
         printMenu(pancakeIterator);
@@ -23,9 +24,9 @@ public class Waitress{
         printMenu(dinerIterator);
     }
 
-    private void printMenu(Iterator iterator){
+    private void printMenu(Iterator<MenuItem> iterator){
         while (iterator.hasNext()){
-            MenuItem menuItem = iterator.next();
+            MenuItem menuItem = (MenuItem) iterator.next();
             System.out.println(menuItem.getName() + ", ");
             System.out.println(menuItem.getPrice() + " -- ");
             System.out.println(menuItem.getDescription());

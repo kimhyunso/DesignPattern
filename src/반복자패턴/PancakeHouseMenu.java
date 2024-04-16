@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import 반복자패턴.domain.MenuItem;
-import 반복자패턴.iterator.Iterator;
+// import 반복자패턴.iterator.Iterator;
+import java.util.Iterator;
 
 public class PancakeHouseMenu {
     private List<MenuItem> menuItems;
@@ -42,13 +43,13 @@ public class PancakeHouseMenu {
     //     return menuItems;
     // }
 
-    public Iterator createIterator(){
-        return new PancakeHouseIterator(menuItems);
+    public Iterator<MenuItem> createIterator(){
+        // return new PancakeHouseIterator(menuItems);
+        return menuItems.iterator();
     }
 
     public void setMenuItems(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
     }
 
-    
 }

@@ -3,9 +3,10 @@ package 반복자패턴;
 import java.util.List;
 
 import 반복자패턴.domain.MenuItem;
-import 반복자패턴.iterator.Iterator;
+// import 반복자패턴.iterator.Iterator;
+import java.util.Iterator;
 
-public class PancakeHouseIterator implements Iterator{
+public class PancakeHouseIterator implements Iterator<MenuItem>{
     private List<MenuItem> items;
     private int position = 0;
 
@@ -27,5 +28,10 @@ public class PancakeHouseIterator implements Iterator{
         MenuItem menuItem = items.get(position);
         position += 1;
         return menuItem;
+    }
+
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException("메뉴 항목은 지우면 안 됩니다.");
     }
 }

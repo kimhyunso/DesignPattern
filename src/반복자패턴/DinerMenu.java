@@ -1,7 +1,8 @@
 package 반복자패턴;
 
 import 반복자패턴.domain.MenuItem;
-import 반복자패턴.iterator.Iterator;
+// import 반복자패턴.iterator.Iterator;
+import java.util.Iterator;
 
 public class DinerMenu {
     
@@ -53,10 +54,7 @@ public class DinerMenu {
         this.menuItems = menuItems;
     }
 
-    public Iterator createIterator(){
-        return new DinerMenuIterator(menuItems);
+    public Iterator<MenuItem> createIterator(){
+        return (Iterator<MenuItem>) new DinerMenuIterator(menuItems);
     }
-
-    
-
 }
