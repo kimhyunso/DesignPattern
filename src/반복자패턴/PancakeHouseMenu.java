@@ -3,11 +3,12 @@ package 반복자패턴;
 import java.util.ArrayList;
 import java.util.List;
 
+import 반복자패턴.domain.Menu;
 import 반복자패턴.domain.MenuItem;
 // import 반복자패턴.iterator.Iterator;
 import java.util.Iterator;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu{
     private List<MenuItem> menuItems;
 
     public PancakeHouseMenu(){
@@ -34,6 +35,7 @@ public class PancakeHouseMenu {
 
     }
 
+    @Override
     public void addItem(String name, String description, boolean vegetarian, double price){
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         menuItems.add(menuItem);
@@ -43,6 +45,8 @@ public class PancakeHouseMenu {
     //     return menuItems;
     // }
 
+    
+    @Override
     public Iterator<MenuItem> createIterator(){
         // return new PancakeHouseIterator(menuItems);
         return menuItems.iterator();

@@ -1,10 +1,11 @@
 package 반복자패턴;
 
+import 반복자패턴.domain.Menu;
 import 반복자패턴.domain.MenuItem;
 // import 반복자패턴.iterator.Iterator;
 import java.util.Iterator;
 
-public class DinerMenu {
+public class DinerMenu implements Menu{
     
     static final int MAX_ITEMS = 6;
     private int numberOfItems = 0;
@@ -24,6 +25,7 @@ public class DinerMenu {
         "샤워크라우트, 갖은 양념, 양파, 치즈가 곁들여진 핫도그", false, 3.05);
     }
 
+    @Override
     public void addItem(String name, String description, boolean vegetarian, double price){
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         if (numberOfItems >= MAX_ITEMS){
@@ -54,6 +56,7 @@ public class DinerMenu {
         this.menuItems = menuItems;
     }
 
+    @Override
     public Iterator<MenuItem> createIterator(){
         return (Iterator<MenuItem>) new DinerMenuIterator(menuItems);
     }
