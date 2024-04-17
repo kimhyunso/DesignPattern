@@ -10,10 +10,10 @@ import 반복자패턴.domain.Menu;
 import 반복자패턴.domain.MenuItem;
 
 public class CafeMenu implements Menu{
-    private Map<String, MenuItem> menuItems = new HashMap<String, MenuItem
-    >();
+    private Map<String, MenuItem> menuItems;
 
     public CafeMenu(){
+        menuItems = new HashMap<String, MenuItem>();
         addItem("베지 버거와 에어 프라이", 
         "통밀빵, 상추, 토마토, 감자 튀김이 첨가된 베지 버거", 
         true, 3.99);
