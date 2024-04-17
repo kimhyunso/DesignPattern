@@ -1,5 +1,4 @@
-
-public class Main {
+public class SingletonTestDrive {
     public static void main(String[] args){
         ChocolateBoiler instance1 = ChocolateBoiler.getInstance();
         ChocolateBoiler instance2 = ChocolateBoiler.getInstance();
