@@ -9,12 +9,11 @@ public class GumballMachine {
     private State hasCoinState;
     private State soldState;
     private State winnerState;
-    
     private State state = soldOutState;
-
     private int count;
+    private String location;
 
-    public GumballMachine(int numberGumballs){
+    public GumballMachine(String location, int numberGumballs){
         soldOutState = new SoldOutState(this);
         noCoinState = new NoCoinState(this);
         hasCoinState = new HasCoinState(this);
@@ -22,6 +21,8 @@ public class GumballMachine {
         winnerState = new WinnerState(this);
 
         this.count = numberGumballs;
+        this.location = location;
+        
         if (numberGumballs > 0){
             state = noCoinState;
         }else{
@@ -88,6 +89,7 @@ public class GumballMachine {
     public void setSoldState(State soldState) {
         this.soldState = soldState;
     }
+    
 
     public State getState() {
         return state;
@@ -118,6 +120,14 @@ public class GumballMachine {
         sb.append(getState().toString());
 
         return sb.toString();
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
     
 }
