@@ -31,6 +31,15 @@ public class NoCoinState implements State{
         System.out.println("동전을 넣어주세요.");
     }
 
+    @Override
+    public String toString(){
+        return "코인이 없는 상태";
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("아무것도 하지 않아용...");
+    }
 
     
 }

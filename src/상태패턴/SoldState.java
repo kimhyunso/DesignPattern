@@ -36,4 +36,14 @@ public class SoldState implements State{
         }
     }
     
+    @Override
+    public String toString(){
+        return "판매상태";
+    }
+    
+    @Override
+    public void refill() {
+        System.out.println("아무것도 하지 않아용...");
+    }
+
 }

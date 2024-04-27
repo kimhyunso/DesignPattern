@@ -5,4 +5,5 @@ public interface State {
     public void ejectCoin();
     public void turnCoin();
     public void dispense();
+    public void refill();
 }

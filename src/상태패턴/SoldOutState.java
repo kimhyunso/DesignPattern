@@ -28,5 +28,17 @@ public class SoldOutState implements State{
     public void dispense() {
         System.out.println("알맹이를 내보낼 수 없습니다.");
     }
+
+    @Override
+    public String toString(){
+        return "매진상태";
+    }
+
+    
+    @Override
+    public void refill() {
+        System.out.println("리필중입니다..");
+        gumballMachine.setState(gumballMachine.getNoCoinState());
+    }
     
 }

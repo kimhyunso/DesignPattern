@@ -8,6 +8,7 @@ public class GumballMachine {
     private State noCoinState;
     private State hasCoinState;
     private State soldState;
+    private State winnerState;
     
     private State state = soldOutState;
 
@@ -18,6 +19,7 @@ public class GumballMachine {
         noCoinState = new NoCoinState(this);
         hasCoinState = new HasCoinState(this);
         soldState = new SoldState(this);
+        winnerState = new WinnerState(this);
 
         this.count = numberGumballs;
         if (numberGumballs > 0){
@@ -44,6 +46,11 @@ public class GumballMachine {
         if (count > 0){
             count -= 1;
         }
+    }
+
+    public void refill(int count){
+        this.count += count;
+        state.refill();
     }
 
     public State getSoldOutState() {
@@ -88,6 +95,29 @@ public class GumballMachine {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public State getWinnerState() {
+        return winnerState;
+    }
+
+    public void setWinnerState(State winnerState) {
+        this.winnerState = winnerState;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("주식회사 왕뽑기\n");
+        sb.append("자바로 돌아가는 최신형 뽑기 기계\n");
+        sb.append("남은 개수 : " + getCount() + "\n");
+        sb.append(getState().toString());
+
+        return sb.toString();
     }
     
 }
