@@ -4,7 +4,10 @@ import 상태패턴.state.State;
 
 public class NoCoinState implements State{
 
-    private GumballMachine gumballMachine;
+
+    private static final long seialVersionID = 2L;
+    // 직렬화 대상 제외
+    transient private GumballMachine gumballMachine;
 
     public NoCoinState(GumballMachine gumballMachine){
         this.gumballMachine = gumballMachine;

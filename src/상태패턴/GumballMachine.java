@@ -1,9 +1,14 @@
 package 상태패턴;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 import 상태패턴.state.State;
+import 프록시패턴.GumballMachineRemote;
 
-public class GumballMachine {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
 
+    private static final long serialVersionUID = 2L;
     private State soldOutState;
     private State noCoinState;
     private State hasCoinState;
@@ -13,7 +18,7 @@ public class GumballMachine {
     private int count;
     private String location;
 
-    public GumballMachine(String location, int numberGumballs){
+    public GumballMachine(String location, int numberGumballs) throws RemoteException{
         soldOutState = new SoldOutState(this);
         noCoinState = new NoCoinState(this);
         hasCoinState = new HasCoinState(this);
@@ -58,6 +63,7 @@ public class GumballMachine {
         return soldOutState;
     }
 
+    @Override
     public int getCount(){
         return count;
     }
@@ -90,7 +96,7 @@ public class GumballMachine {
         this.soldState = soldState;
     }
     
-
+    @Override
     public State getState() {
         return state;
     }
@@ -122,6 +128,7 @@ public class GumballMachine {
         return sb.toString();
     }
 
+    @Override
     public String getLocation() {
         return location;
     }

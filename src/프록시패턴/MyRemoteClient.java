@@ -9,7 +9,7 @@ public class MyRemoteClient {
 
     public void go(){
         try{
-            MyRemote service = (MyRemote) Naming.lookup("rmi://127.0.0.1:9999/RemoteHello");
+            MyRemote service = (MyRemote) Naming.lookup("rmi://localhost:1090/RemoteHello");
             String s = service.sayHello();
             System.out.println(s);
         }catch(Exception e){

@@ -6,7 +6,10 @@ import 상태패턴.state.State;
 
 public class HasCoinState implements State{
 
-    private GumballMachine gumballMachine;
+    private static final long seialVersionID = 2L;
+    // 직렬화 대상 제외
+    transient private GumballMachine gumballMachine;
+    
     private Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasCoinState(GumballMachine gumballMachine){
