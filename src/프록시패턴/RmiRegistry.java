@@ -8,7 +8,9 @@ public class RmiRegistry {
         try{
             MyRemote service = new MyRemoteImpl();
             Naming.rebind("RemoteHello", service);
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
 }
